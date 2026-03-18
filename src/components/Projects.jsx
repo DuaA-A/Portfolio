@@ -112,8 +112,8 @@ const Modal = ({ project, onClose }) => {
         right: 0,
         bottom: 0,
         zIndex: 2000,
-        background: 'rgba(25, 25, 25, 0.7)',
-        backdropFilter: 'blur(8px)',
+        background: 'rgba(18, 18, 18, 0.8)', // Deeper, more premium backdrop
+        backdropFilter: 'blur(12px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

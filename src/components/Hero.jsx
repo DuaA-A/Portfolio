@@ -22,8 +22,8 @@ const Hero = () => {
     >
       <div style={{ 
         display: 'grid', 
-        gridTemplateColumns: 'minmax(0, 1.15fr) minmax(0, 0.85fr)', 
-        gap: '4rem', 
+        gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 0.75fr)', // Adjusted for slightly wider content
+        gap: '5rem', 
         alignItems: 'center',
         width: '100%'
       }} className="hero-grid">
@@ -64,7 +64,7 @@ const Hero = () => {
               href="#projects" 
               className="btn-premium"
             >
-              Selected View <ArrowRight size={18} style={{ marginLeft: '10px' }} />
+              Explore Projects <ArrowRight size={18} style={{ marginLeft: '10px' }} />
             </motion.a>
             <motion.a 
               whileHover={{ scale: 1.05 }}
@@ -81,26 +81,39 @@ const Hero = () => {
 
         {/* Right Side: Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.9, x: 50 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1, 
+            x: 0,
+            y: [0, -15, 0] 
+          }}
+          transition={{ 
+            opacity: { duration: 1.2, delay: 0.2 },
+            scale: { duration: 1.2, delay: 0.2 },
+            x: { duration: 1.2, delay: 0.2 },
+            y: { duration: 5, repeat: Infinity, ease: "easeInOut" } 
+          }}
+          whileHover={{ scale: 1.02 }} // Interactive feel
           style={{ position: 'relative', justifySelf: 'center' }}
         >
           <div className="arched-frame" style={{ 
-            width: '340px', 
-            height: '460px', 
+            width: '380px', // Increased slightly more as requested
+            height: '520px', 
             margin: '0 auto',
-            borderRadius: '170px 170px 30px 30px', 
+            borderRadius: '190px 190px 40px 40px', 
             border: '1px solid var(--border-color)',
-            padding: '12px',
+            padding: '14px',
             background: 'white',
-            boxShadow: '0 30px 60px -12px rgba(0,0,0,0.1)'
+            boxShadow: '0 40px 80px -15px rgba(0,0,0,0.15)',
+            transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
           }}>
-            <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '158px 158px 18px 18px' }}>
+            <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '176px 176px 26px 26px' }}>
               <img 
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
                 alt={name} 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(5%) contrast(102%)' }}
+                className="hero-img"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(3%) contrast(105%)' }}
               />
             </div>
           </div>

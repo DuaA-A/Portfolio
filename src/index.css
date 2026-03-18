@@ -5,11 +5,11 @@
   --bg-secondary: #FDFDFD;
   --accent-primary: #C5A386;
   --accent-dark: #8E6E53;
-  --text-primary: #2D2D2D;
-  --text-secondary: #666666;
-  --border-color: rgba(197, 163, 134, 0.2);
+  --text-primary: #1A1A1A; /* More professional dark tone */
+  --text-secondary: #555555; /* Refined secondary text */
+  --border-color: rgba(197, 163, 134, 0.25);
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Public Sans', sans-serif;
   --btn-bg: #8E6E53;
@@ -42,6 +42,12 @@ h1, h2, h3, h4, .serif {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 0 1rem; /* Shifted left slightly to align with content visual flow */
 }
 
 .section-padding {

@@ -18,7 +18,7 @@ const Navbar = () => {
     { name: 'Home', href: '#' },
     { name: 'About', href: '#about' },
     { name: 'Education', href: '#education' },
-    { name: 'Achievements', href: '#achievements' },
+    // { name: 'Achievements', href: '#achievements' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
@@ -39,7 +39,7 @@ const Navbar = () => {
         borderBottom: isScrolled ? '1px solid rgba(197, 163, 134, 0.1)' : 'none'
       }}
     >
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="navbar-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <motion.a 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
