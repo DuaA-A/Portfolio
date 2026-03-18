@@ -7,27 +7,27 @@ const Hero = () => {
   const { name, tagline, summary } = portfolioData.personalInfo;
 
   return (
-    <section 
-      style={{ 
-        minHeight: '100vh', 
-        display: 'flex', 
+    <section
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center', 
+        justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
         padding: '160px 0 80px 0' // Perfect visual balance for 80px navbar
-      }} 
+      }}
       className="container"
     >
-      <div style={{ 
-        display: 'grid', 
+      <div style={{
+        display: 'grid',
         gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 0.75fr)', // Adjusted for slightly wider content
-        gap: '5rem', 
+        gap: '5rem',
         alignItems: 'center',
         width: '100%'
       }} className="hero-grid">
-        
+
         {/* Left Side: Content - BRIEF USP */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -35,16 +35,16 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           style={{ textAlign: 'left' }}
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="serif" 
+            className="serif"
             style={{ color: 'var(--accent-primary)', fontSize: '0.9rem', fontWeight: '600', letterSpacing: '4px', display: 'block', marginBottom: '1.2rem', textTransform: 'uppercase' }}
           >
             Software Engineer & Instructor
           </motion.span>
-          
+
           <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.2rem)', lineHeight: '1.1', marginBottom: '1.5rem', letterSpacing: '-1.5px' }}>
             {name.split(' ')[0]} <span style={{ fontStyle: 'italic', fontWeight: '400', color: 'var(--accent-primary)' }}>{name.split(' ').slice(1, 2)}</span> {name.split(' ').slice(2).join(' ')}
           </h1>
@@ -58,18 +58,18 @@ const Hero = () => {
           </p>
 
           <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#projects" 
+              href="#projects"
               className="btn-premium"
-            >
+            >cdqsa
               Explore Projects <ArrowRight size={18} style={{ marginLeft: '10px' }} />
             </motion.a>
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href={portfolioData.personalInfo.cvUrl} 
+              href={portfolioData.personalInfo.cvUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"
@@ -82,26 +82,26 @@ const Hero = () => {
         {/* Right Side: Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, x: 50 }}
-          animate={{ 
-            opacity: 1, 
-            scale: 1, 
+          animate={{
+            opacity: 1,
+            scale: 1,
             x: 0,
-            y: [0, -15, 0] 
+            y: [0, -15, 0]
           }}
-          transition={{ 
+          transition={{
             opacity: { duration: 1.2, delay: 0.2 },
             scale: { duration: 1.2, delay: 0.2 },
             x: { duration: 1.2, delay: 0.2 },
-            y: { duration: 5, repeat: Infinity, ease: "easeInOut" } 
+            y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
           }}
           whileHover={{ scale: 1.02 }} // Interactive feel
           style={{ position: 'relative', justifySelf: 'center' }}
         >
-          <div className="arched-frame" style={{ 
+          <div className="arched-frame" style={{
             width: '380px', // Increased slightly more as requested
-            height: '520px', 
+            height: '520px',
             margin: '0 auto',
-            borderRadius: '190px 190px 40px 40px', 
+            borderRadius: '190px 190px 40px 40px',
             border: '1px solid var(--border-color)',
             padding: '14px',
             background: 'white',
@@ -109,24 +109,24 @@ const Hero = () => {
             transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
           }}>
             <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '176px 176px 26px 26px' }}>
-              <img 
-                src={portfolioData.personalInfo.heroImage || "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"} 
-                alt={name} 
+              <img
+                src={portfolioData.personalInfo.heroImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view?usp=drive_link"}
+                alt={name}
                 className="hero-img"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(3%) contrast(105%)' }}
               />
             </div>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            style={{ 
-              position: 'absolute', 
-              bottom: '-30px', 
-              right: '-30px', 
-              width: '120px', 
-              height: '120px', 
+            style={{
+              position: 'absolute',
+              bottom: '-30px',
+              right: '-30px',
+              width: '120px',
+              height: '120px',
               border: '2px dashed var(--accent-primary)',
               zIndex: -1,
               borderRadius: '40px',
@@ -140,9 +140,9 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        style={{ 
-          position: 'absolute', 
-          bottom: '40px', 
+        style={{
+          position: 'absolute',
+          bottom: '40px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
