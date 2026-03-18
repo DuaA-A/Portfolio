@@ -110,7 +110,7 @@ const Hero = () => {
           }}>
             <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '176px 176px 26px 26px' }}>
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
+                src={portfolioData.personalInfo.heroImage || "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"} 
                 alt={name} 
                 className="hero-img"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(3%) contrast(105%)' }}
