@@ -6,7 +6,7 @@ import { portfolioData } from '../data/portfolioData';
 const Feedback = () => {
   return (
     <section id="testimonials" className="section-padding container">
-      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: 'clamp(2.5rem, 8vw, 4rem)' }}>
         <motion.h2 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -18,9 +18,9 @@ const Feedback = () => {
 
       <div style={{ 
         display: 'grid', 
-        gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', 
-        gap: '2rem',
-        alignItems: 'stretch' // Ensure equal height/width layout feel
+        gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 40vw, 360px), 1fr))', 
+        gap: 'clamp(1.5rem, 4vw, 2.5rem)',
+        alignItems: 'stretch'
       }}>
         {portfolioData.testimonials.map((testimonial, index) => (
           <TestimonialCard key={testimonial.name} testimonial={testimonial} index={index} />
@@ -42,7 +42,7 @@ const TestimonialCard = ({ testimonial, index }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       style={{ 
-        padding: '2.5rem', 
+        padding: 'clamp(1.5rem, 5vw, 2.5rem)', 
         background: 'white', 
         border: '1px solid var(--border-color)', 
         borderRadius: '24px',
@@ -55,8 +55,15 @@ const TestimonialCard = ({ testimonial, index }) => {
       }}
       whileHover={{ y: -5, boxShadow: 'var(--shadow-md)' }}
     >
-      <div style={{ position: 'absolute', top: '2rem', right: '2rem', color: 'rgba(197, 163, 134, 0.1)' }}>
-        <Quote size={50} fill="currentColor" />
+      <div style={{ 
+        position: 'absolute', 
+        top: '1.5rem', 
+        right: '1.5rem', 
+        color: 'rgba(197, 163, 134, 0.1)',
+        width: 'clamp(30px, 8vw, 50px)',
+        height: 'clamp(30px, 8vw, 50px)'
+      }}>
+        <Quote style={{ width: '100%', height: '100%' }} fill="currentColor" />
       </div>
 
       <div>
@@ -64,7 +71,7 @@ const TestimonialCard = ({ testimonial, index }) => {
           {[1, 2, 3, 4, 5].map(s => <Star key={s} size={14} fill="currentColor" />)}
         </div>
 
-        <p style={{ color: 'var(--text-primary)', fontSize: '1rem', lineHeight: '1.7', marginBottom: '1.5rem', fontStyle: 'italic' }}>
+        <p style={{ color: 'var(--text-primary)', fontSize: 'clamp(0.95rem, 2.5vw, 1rem)', lineHeight: '1.7', marginBottom: '1.5rem', fontStyle: 'italic' }}>
           "{displayedText}{!isExpanded && isLongText ? '...' : ''}"
         </p>
         
@@ -99,5 +106,9 @@ const TestimonialCard = ({ testimonial, index }) => {
     </motion.div>
   );
 };
+
+function clamp(min, preferred, max) {
+  return `clamp(${min}px, ${preferred}, ${max}px)`;
+}
 
 export default Feedback;

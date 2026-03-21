@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { MousePointer2, ArrowRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-// Add a keyframes animation for the gradient button
 const gradientAnimation = `
   @keyframes gradient {
     0% { background-position: 0% 50%; }
@@ -58,7 +57,7 @@ const Hero = () => {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        padding: '160px 0 80px 0',
+        padding: 'clamp(120px, 15vh, 180px) 0 clamp(40px, 5vh, 80px) 0',
         background: 'var(--bg-primary)'
       }}
       className="container"
@@ -66,62 +65,94 @@ const Hero = () => {
       <style>{gradientAnimation}</style>
       <FloatingParticles />
 
-
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 0.75fr)', // Adjusted for slightly wider content
-        gap: '5rem',
+        gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 0.8fr)',
+        gap: 'clamp(2rem, 5vw, 5rem)',
         alignItems: 'center',
         width: '100%'
       }} className="hero-grid">
 
-        {/* Left Side: Content - BRIEF USP */}
+        {/* Left Side: Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          style={{ textAlign: 'left' }}
+          style={{ textAlign: 'inherit' }}
+          className="hero-content"
         >
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
             className="serif"
-            style={{ color: 'var(--accent-primary)', fontSize: '0.9rem', fontWeight: '600', letterSpacing: '4px', display: 'block', marginBottom: '1.2rem', textTransform: 'uppercase' }}
+            style={{ 
+              color: 'var(--accent-primary)', 
+              fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
+              fontWeight: '600', 
+              letterSpacing: 'clamp(2px, 1vw, 4px)', 
+              display: 'block', 
+              marginBottom: '1rem', 
+              textTransform: 'uppercase' 
+            }}
           >
             {title}
           </motion.span>
 
-          <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.2rem)', lineHeight: '1.1', marginBottom: '1.5rem', letterSpacing: '-1.5px' }}>
+          <h1 style={{ 
+            fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', 
+            lineHeight: '1.1', 
+            marginBottom: '1.5rem', 
+            letterSpacing: '-1.5px',
+            fontWeight: '700'
+          }}>
             {name.split(' ')[0]} <span style={{ fontStyle: 'italic', fontWeight: '400', color: 'var(--accent-primary)' }}>{name.split(' ').slice(1, 2)}</span> {name.split(' ').slice(2).join(' ')}
           </h1>
 
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-primary)', fontWeight: '600', marginBottom: '1.2rem', maxWidth: '600px', lineHeight: '1.4' }}>
+          <p style={{ 
+            fontSize: 'clamp(1rem, 3vw, 1.25rem)', 
+            color: 'var(--text-primary)', 
+            fontWeight: '600', 
+            marginBottom: '1.2rem', 
+            maxWidth: '600px', 
+            lineHeight: '1.4' 
+          }}>
             {tagline}
           </p>
 
-          <p style={{ marginBottom: '2.5rem', color: 'var(--text-secondary)', lineHeight: '1.7', maxWidth: '480px', fontSize: '1rem' }}>
+          <p style={{ 
+            marginBottom: '2.5rem', 
+            color: 'var(--text-secondary)', 
+            lineHeight: '1.7', 
+            maxWidth: '480px', 
+            fontSize: 'clamp(0.9rem, 2vw, 1.05rem)' 
+          }}>
             {summary}
           </p>
 
-          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+          <div 
+            style={{ 
+              display: 'flex', 
+              gap: '1.2rem', 
+              flexWrap: 'wrap', 
+              justifyContent: 'inherit',
+              width: '100%',
+              alignItems: 'center'
+            }}
+            className="hero-buttons"
+          >
             <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               href="#projects"
               className="btn-premium"
-              style={{
-                background: 'linear-gradient(-45deg, #C5A386, #8E6E53, #D4B996, #A68B71)',
-                backgroundSize: '400% 400%',
-                animation: 'gradient 8s ease infinite',
-                border: 'none'
-              }}
+              style={{ display: 'flex', alignItems: 'center' }}
             >
               Explore Projects <ArrowRight size={18} style={{ marginLeft: '10px' }} />
             </motion.a>
             <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               href={portfolioData.personalInfo.cvUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -135,40 +166,36 @@ const Hero = () => {
         {/* Right Side: Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, x: 50 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            x: 0
-          }}
-          transition={{
-            opacity: { duration: 1.2, delay: 0.2 },
-            scale: { duration: 1.2, delay: 0.2 },
-            x: { duration: 1.2, delay: 0.2 }
-          }}
-          whileHover={{ scale: 1.02 }} // Interactive feel
-          style={{ position: 'relative', justifySelf: 'center' }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+          className="hero-image-wrapper"
+          style={{ position: 'relative', justifySelf: 'center', width: '100%', maxWidth: '400px' }}
         >
           <div className="arched-frame" style={{
-            width: '380px',
-            height: '520px',
-            margin: '0 auto',
-            borderRadius: '190px 190px 40px 40px',
-            border: '2px solid var(--accent-primary)', // Restored and emphasized border
-            padding: '16px', // Original padding
+            width: '100%',
+            aspectRatio: '380 / 520',
+            borderRadius: 'clamp(100px, 30vw, 190px) clamp(100px, 30vw, 190px) 40px 40px',
+            border: '2px solid var(--accent-primary)',
+            padding: 'clamp(8px, 2vw, 16px)',
             background: 'white',
             boxShadow: '0 40px 80px -15px rgba(0,0,0,0.15)',
             position: 'relative',
             zIndex: 1
           }}>
-            <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '176px 176px 26px 26px' }}>
+            <div style={{ 
+              width: '100%', 
+              height: '100%', 
+              overflow: 'hidden', 
+              borderRadius: 'clamp(90px, 28vw, 176px) clamp(90px, 28vw, 176px) 26px 26px' 
+            }}>
               <img
-                src={portfolioData.personalInfo.heroImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}//
+                src={portfolioData.personalInfo.heroImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
                 alt={name}
                 className="hero-img"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(3%) contrast(105%)' }}
               />
             </div>
-            {/* Static decorative element outside the image border */}
+            {/* Static decorative element */}
             <div style={{
               position: 'absolute',
               top: '-10px',
@@ -176,12 +203,11 @@ const Hero = () => {
               right: '-10px',
               bottom: '-10px',
               border: '1px solid var(--border-color)',
-              borderRadius: '200px 200px 50px 50px',
+              borderRadius: 'clamp(110px, 32vw, 200px) clamp(110px, 32vw, 200px) 50px 50px',
               zIndex: -1,
               pointerEvents: 'none'
             }} />
           </div>
-
         </motion.div>
       </div>
 
@@ -189,9 +215,10 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
+        className="scroll-indicator"
         style={{
           position: 'absolute',
-          bottom: '40px',
+          bottom: '2rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

@@ -11,7 +11,7 @@ export const portfolioData = {
     tagline: "Software Engineer merging robust backend systems with premium frontend aesthetics.",
     usp: "Software Engineer | Full-Stack Developer | UX Enthusiast.",
     cvUrl: "https://drive.google.com/file/d/1YVSWDaOXUcNubIkk25U5KPkZkzhLWD8g/view?usp=drive_link",
-    heroImage: "/src/assets/hero.png"
+    heroImage: "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view?usp=drive_link"
   },
   education: [
     {
