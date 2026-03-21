@@ -6,7 +6,7 @@ import { portfolioData } from '../data/portfolioData';
 const Experience = () => {
   return (
     <section id="experience" className="section-padding container">
-      <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,9 +14,6 @@ const Experience = () => {
         >
           Professional <span style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Experience</span>
         </motion.h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '700px', margin: '0 auto' }}>
-          Bridging the gap between industrial software development and academic excellence.
-        </p>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', maxWidth: '900px', margin: '0 auto' }}>

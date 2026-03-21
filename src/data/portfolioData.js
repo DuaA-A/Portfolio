@@ -1,7 +1,7 @@
 export const portfolioData = {
   personalInfo: {
     name: "Duaa Abd-Elati Abd-Elazeem",
-    title: "Software Engineer | Full-Stack Developer",
+    title: "Full-Stack Software Engineer | Backend Architect & Frontend Specialist",
     email: "duaa.ati.45@gmail.com",
     phone: "+201065728303",
     location: "Giza, Egypt",
@@ -11,7 +11,7 @@ export const portfolioData = {
     tagline: "Software Engineer merging robust backend systems with premium frontend aesthetics.",
     usp: "Software Engineer | Full-Stack Developer | UX Enthusiast.",
     cvUrl: "https://drive.google.com/file/d/1YVSWDaOXUcNubIkk25U5KPkZkzhLWD8g/view?usp=drive_link",
-    heroImage: "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view?usp=drive_link"
+    heroImage: "/src/assets/hero.png"
   },
   education: [
     {
@@ -39,7 +39,7 @@ export const portfolioData = {
   projects: [
     {
       id: "ro-glowguide",
-      title: "RO-GlowGuide",
+      title: "RO GlowGuide",
       type: "Cosmetics Website",
       description: "A centralized resource for users to understand their skin and hair types and find appropriate treatment paths. It includes a curated product catalogue with detailed ingredient analysis and medical safety information.",
       tools: ["React", "Framer Motion", "Vanilla CSS", "UI/UX Design"],
@@ -106,9 +106,9 @@ export const portfolioData = {
     {
       id: "restaurant-tracker",
       title: "Restaurant Tracker",
-      type: "Mobile App UI",
+      type: "Mobile App",
       description: "Modern mobile app interface for restaurant management featuring order tracking and digital menus. High-intensity visual feedback and real-time updates.",
-      tools: ["Flutter", "UI/UX Design", "Firebase"],
+      tools: ["Flutter", "UI/UX Design", "Full Backend Inegeration"],
       role: "Designer & Developer",
       link: "#",
       github: "https://github.com/Duaa-A",
@@ -119,15 +119,15 @@ export const portfolioData = {
   ],
   testimonials: [
     {
-      name: "Amanie Ibrahim",
-      text: "Working with Duaa was a great experience. She is very professional and her work is amazing.",
-      role: "Project Collaborator"
+      name: "Omima Saeid",
+      text: "Honestly, you’re incredibly talented, mashallah. Your work, your attitude everything is amazing. And the most important thing (and I truly mean this, not just a compliment) is that you treat everything like it’s your own project. You put in real effort, always trying to make it the best and more creative than anything else. And of course, mashallah, you always finish your work so quickly, seriously, you’re amazing. Keep going! As for the website, I was personally so impressed. it was honestly super wow 💕",
+      role: "Team Leader, RO-GlowGuide"
     },
     {
-      name: "A-Y-S",
-      text: "Amazing work... highly recommended for anyone looking for quality web development.",
-      role: "Client"
-    }
+      name: "Youssif Ali Okasha",
+      text: "Amazing work! Professional, creative, and very easy to deal with. Highly recommended.",
+      role: "Team Member, RO-GlowGuide"
+    },
   ],
   achievements: [
     {

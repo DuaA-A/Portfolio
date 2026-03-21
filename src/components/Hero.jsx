@@ -3,8 +3,50 @@ import { motion } from 'framer-motion';
 import { MousePointer2, ArrowRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
+// Add a keyframes animation for the gradient button
+const gradientAnimation = `
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+`;
+
+const FloatingParticles = () => {
+    return (
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: -1 }}>
+            {[...Array(6)].map((_, i) => (
+                <motion.div
+                    key={i}
+                    animate={{
+                        y: [0, -100, 0],
+                        opacity: [0, 0.4, 0],
+                        scale: [0, 1.2, 0]
+                    }}
+                    transition={{
+                        duration: 10 + Math.random() * 10,
+                        repeat: Infinity,
+                        delay: Math.random() * 5,
+                        ease: "linear"
+                    }}
+                    style={{
+                        position: 'absolute',
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                        width: '8px',
+                        height: '8px',
+                        background: 'var(--accent-primary)',
+                        borderRadius: '50%',
+                        filter: 'blur(2px)'
+                    }}
+                />
+            ))}
+        </div>
+    );
+};
+
 const Hero = () => {
-  const { name, tagline, summary } = portfolioData.personalInfo;
+  const { name, tagline, summary, title } = portfolioData.personalInfo;
 
   return (
     <section
@@ -16,10 +58,15 @@ const Hero = () => {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        padding: '160px 0 80px 0' // Perfect visual balance for 80px navbar
+        padding: '160px 0 80px 0',
+        background: 'var(--bg-primary)'
       }}
       className="container"
     >
+      <style>{gradientAnimation}</style>
+      <FloatingParticles />
+      
+
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 0.75fr)', // Adjusted for slightly wider content
@@ -42,7 +89,7 @@ const Hero = () => {
             className="serif"
             style={{ color: 'var(--accent-primary)', fontSize: '0.9rem', fontWeight: '600', letterSpacing: '4px', display: 'block', marginBottom: '1.2rem', textTransform: 'uppercase' }}
           >
-            Software Engineer & Instructor
+            {title}
           </motion.span>
 
           <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.2rem)', lineHeight: '1.1', marginBottom: '1.5rem', letterSpacing: '-1.5px' }}>
@@ -63,7 +110,13 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               href="#projects"
               className="btn-premium"
-            >cdqsa
+              style={{
+                background: 'linear-gradient(-45deg, #C5A386, #8E6E53, #D4B996, #A68B71)',
+                backgroundSize: '400% 400%',
+                animation: 'gradient 8s ease infinite',
+                border: 'none'
+              }}
+            >
               Explore Projects <ArrowRight size={18} style={{ marginLeft: '10px' }} />
             </motion.a>
             <motion.a
@@ -85,54 +138,50 @@ const Hero = () => {
           animate={{
             opacity: 1,
             scale: 1,
-            x: 0,
-            y: [0, -15, 0]
+            x: 0
           }}
           transition={{
             opacity: { duration: 1.2, delay: 0.2 },
             scale: { duration: 1.2, delay: 0.2 },
-            x: { duration: 1.2, delay: 0.2 },
-            y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+            x: { duration: 1.2, delay: 0.2 }
           }}
           whileHover={{ scale: 1.02 }} // Interactive feel
           style={{ position: 'relative', justifySelf: 'center' }}
         >
           <div className="arched-frame" style={{
-            width: '380px', // Increased slightly more as requested
+            width: '380px',
             height: '520px',
             margin: '0 auto',
             borderRadius: '190px 190px 40px 40px',
-            border: '1px solid var(--border-color)',
-            padding: '14px',
+            border: '2px solid var(--accent-primary)', // Restored and emphasized border
+            padding: '16px', // Original padding
             background: 'white',
             boxShadow: '0 40px 80px -15px rgba(0,0,0,0.15)',
-            transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+            position: 'relative',
+            zIndex: 1
           }}>
             <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '176px 176px 26px 26px' }}>
               <img
-                src={portfolioData.personalInfo.heroImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view?usp=drive_link"}
+                src={portfolioData.personalInfo.heroImage || "/src/assets/hero.png"}
                 alt={name}
                 className="hero-img"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(3%) contrast(105%)' }}
               />
             </div>
+            {/* Static decorative element outside the image border */}
+            <div style={{
+              position: 'absolute',
+              top: '-10px',
+              left: '-10px',
+              right: '-10px',
+              bottom: '-10px',
+              border: '1px solid var(--border-color)',
+              borderRadius: '200px 200px 50px 50px',
+              zIndex: -1,
+              pointerEvents: 'none'
+            }} />
           </div>
 
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            style={{
-              position: 'absolute',
-              bottom: '-30px',
-              right: '-30px',
-              width: '120px',
-              height: '120px',
-              border: '2px dashed var(--accent-primary)',
-              zIndex: -1,
-              borderRadius: '40px',
-              opacity: 0.2
-            }}
-          ></motion.div>
         </motion.div>
       </div>
 

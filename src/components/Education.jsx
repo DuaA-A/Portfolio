@@ -6,7 +6,7 @@ import { portfolioData } from '../data/portfolioData';
 const Education = () => {
   return (
     <section id="education" className="section-padding container">
-      <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <motion.div
            initial={{ opacity: 0, scale: 0.9 }}
            whileInView={{ opacity: 1, scale: 1 }}
@@ -21,7 +21,6 @@ const Education = () => {
             Academic <span style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Journey</span>
           </motion.h2>
         </motion.div>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>Foundational engineering knowledge and continuous learning.</p>
       </div>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>

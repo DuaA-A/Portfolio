@@ -6,7 +6,7 @@ import { portfolioData } from '../data/portfolioData';
 const Achievements = () => {
   return (
     <section id="achievements" className="section-padding container">
-      <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,7 +14,6 @@ const Achievements = () => {
         >
           Key <span style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Achievements</span>
         </motion.h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}>Certifications and honors that validate my technical expertise.</p>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
