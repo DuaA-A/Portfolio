@@ -14,7 +14,7 @@ const About = () => {
           <div className="arched-frame" style={{ width: '100%', height: '500px', borderRadius: '250px 250px 40px 40px', border: '1px solid var(--border-color)', padding: '12px', background: 'white' }}>
             <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '240px 240px 30px 30px' }}>
               <img
-                src="https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view?usp=drive_link"
+                src="https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"
                 alt="About"
                 style={{ filter: 'sepia(30%) contrast(105%) brightness(95%)' }}
               />

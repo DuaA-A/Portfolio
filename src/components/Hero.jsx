@@ -13,36 +13,36 @@ const gradientAnimation = `
 `;
 
 const FloatingParticles = () => {
-    return (
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: -1 }}>
-            {[...Array(6)].map((_, i) => (
-                <motion.div
-                    key={i}
-                    animate={{
-                        y: [0, -100, 0],
-                        opacity: [0, 0.4, 0],
-                        scale: [0, 1.2, 0]
-                    }}
-                    transition={{
-                        duration: 10 + Math.random() * 10,
-                        repeat: Infinity,
-                        delay: Math.random() * 5,
-                        ease: "linear"
-                    }}
-                    style={{
-                        position: 'absolute',
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                        width: '8px',
-                        height: '8px',
-                        background: 'var(--accent-primary)',
-                        borderRadius: '50%',
-                        filter: 'blur(2px)'
-                    }}
-                />
-            ))}
-        </div>
-    );
+  return (
+    <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: -1 }}>
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{
+            y: [0, -100, 0],
+            opacity: [0, 0.4, 0],
+            scale: [0, 1.2, 0]
+          }}
+          transition={{
+            duration: 10 + Math.random() * 10,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: "linear"
+          }}
+          style={{
+            position: 'absolute',
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            width: '8px',
+            height: '8px',
+            background: 'var(--accent-primary)',
+            borderRadius: '50%',
+            filter: 'blur(2px)'
+          }}
+        />
+      ))}
+    </div>
+  );
 };
 
 const Hero = () => {
@@ -65,7 +65,7 @@ const Hero = () => {
     >
       <style>{gradientAnimation}</style>
       <FloatingParticles />
-      
+
 
       <div style={{
         display: 'grid',
@@ -162,7 +162,7 @@ const Hero = () => {
           }}>
             <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '176px 176px 26px 26px' }}>
               <img
-                src={portfolioData.personalInfo.heroImage || "/src/assets/hero.png"}
+                src={portfolioData.personalInfo.heroImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}//
                 alt={name}
                 className="hero-img"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(3%) contrast(105%)' }}
