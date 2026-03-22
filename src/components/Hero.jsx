@@ -132,7 +132,7 @@ const Hero = () => {
                 borderRadius: 'clamp(90px, 28vw, 176px) clamp(90px, 28vw, 176px) 26px 26px'
               }}>
                 <img
-                  src={portfolioData.personalInfo.heroImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
+                  src={portfolioData.personalInfo.heroImage || "https://placehold.co/600x800/white/C5A059?text=Hero+Image"}
                   alt={name}
                   className="hero-img"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}

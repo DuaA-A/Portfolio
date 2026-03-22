@@ -33,7 +33,7 @@ const About = () => {
           }}>
             <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: 'clamp(90px, 38vw, 240px) clamp(90px, 38vw, 240px) 30px 30px' }}>
               <img
-                src={aboutImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
+                src={aboutImage || "https://placehold.co/600x800/white/C5A059?text=About+Image"}
                 alt="About"
                 style={{ filter: 'sepia(30%) contrast(105%) brightness(95%)', width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -71,7 +71,7 @@ const About = () => {
             }}>
               <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: 'clamp(90px, 38vw, 240px) clamp(90px, 38vw, 240px) 30px 30px' }}>
                 <img
-                  src={aboutImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
+                  src={aboutImage || "https://placehold.co/600x800/white/C5A059?text=About+Image"}
                   alt="About"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />

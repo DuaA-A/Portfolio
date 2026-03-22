@@ -1,12 +1,3 @@
-/**
- * PORTFOLIO DATA TEMPLATE
- * -----------------------
- * This file contains all the content for your portfolio.
- * 
- * - Personal Info: Your core branding and contact details.
- * - Education/Skills/Projects/Testimonials: Arrays of objects.
- * - Hiding Sections: To hide a section (e.g., Testimonials), simply leave the array empty: [].
- */
 export const portfolioData = {
   personalInfo: {
     name: "Duaa Abd-Elati Abd-Elazeem",
@@ -23,7 +14,7 @@ export const portfolioData = {
     usp: "Software Engineer | Full-Stack Developer | UX Enthusiast.",
     cvUrl: "https://drive.google.com/file/d/1YVSWDaOXUcNubIkk25U5KPkZkzhLWD8g/view?usp=drive_link",
     heroImage: "/hero-image.jpg", // Local path in /public or generic URL
-    aboutImage: "/hero2.jpg"  // Local path in /public or generic URL
+    aboutImage: "/hero2.png"      // Local path in /public or generic URL
   },
   sectionTitles: {
     about: "A Brief Introduction",
@@ -64,11 +55,17 @@ export const portfolioData = {
       description: "A centralized resource for users to understand their skin and hair types and find appropriate treatment paths. It includes a curated product catalogue with detailed ingredient analysis and medical safety information.",
       tools: ["React", "Framer Motion", "Vanilla CSS", "UI/UX Design"],
       role: "Lead Developer (Freelance)",
-      link: "ro-glowguide.vercel.app",
+      link: "https://ro-glowguide.vercel.app",
       github: "https://github.com/DuaA-A/RO-GlowGuide",
       imageType: "website",
       images: [
-        "/RO/{8E59A760-F87A-421E-B1B3-580F20677B15}.png",
+        "/RO/1.png",
+        "/RO/2.jpg",
+        "/RO/3.jpg",
+        "/RO/4.jpg",
+        "/RO/5.jpg",
+        "/RO/6.jpg",
+        "/RO/7.jpg"
       ]
     },
     {
@@ -78,7 +75,7 @@ export const portfolioData = {
       description: "A minimalist interior design and furniture store website focusing on high-end aesthetics and responsiveness. Features a dynamic catalog and smooth transitions.",
       tools: ["React", "JavaScript", "CSS3", "Framer Motion"],
       role: "Frontend Developer",
-      link: "#",
+      link: "https://duaa-a.github.io/xtratheme",
       github: "https://github.com/Duaa-A",
       imageType: "website",
       images: [
@@ -121,7 +118,6 @@ export const portfolioData = {
       github: "https://github.com/Duaa-A",
       imageType: "backend",
       images: [
-        "/smart-Enroll/Screenshot 2025-05-16 010813.png"
       ]
     },
     {
@@ -135,6 +131,11 @@ export const portfolioData = {
       github: "https://github.com/Duaa-A",
       imageType: "mobile",
       images: [
+        "/Restaurant Tracker/Screenshot 2025-04-16 120108.png",
+        "/Restaurant Tracker/Screenshot 2025-04-16 134452.png",
+        "/Restaurant Tracker/Screenshot 2025-04-16 134459.png",
+        "/Restaurant Tracker/Screenshot 2025-04-16 140950.png",
+        "/Restaurant Tracker/Screenshot 2025-04-16 180605.png"
       ]
     }
   ],
