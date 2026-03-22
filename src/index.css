@@ -3,16 +3,16 @@
 :root {
   --bg-primary: #FAF9F6;
   --bg-secondary: #FDFDFD;
-  --accent-primary: #A68B71;
-  --accent-dark: #7D5F45;
+  --accent-primary: #C5A059; /* Professional Gold */
+  --accent-dark: #8B6F3D;    /* Deep Gold */
   --text-primary: #1A1A1A;
   --text-secondary: #444444;
-  --border-color: rgba(166, 139, 113, 0.3);
+  --border-color: rgba(197, 160, 89, 0.2);
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Public Sans', sans-serif;
-  --btn-bg: #8E6E53;
+  --btn-bg: #B08D57;
   
   /* Responsive Spacing */
   --section-padding: clamp(4rem, 10vw, 8rem);
@@ -107,7 +107,7 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 1.1rem 2.5rem;
-  background: linear-gradient(-45deg, #a68b71, #7d5f45, #d4b996, #8e6e53);
+  background: linear-gradient(-45deg, #C5A059, #8B6F3D, #EAD6A3, #B08D57);
   background-size: 300% 300%;
   animation: gradient 6s ease infinite;
   color: white;

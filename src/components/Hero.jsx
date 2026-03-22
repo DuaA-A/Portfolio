@@ -106,8 +106,10 @@ const Hero = () => {
             letterSpacing: '-1.5px',
             fontWeight: '700'
           }}>
-            {name.split(' ').slice(0, Math.max(1, Math.ceil(name.split(' ').length / 2) - 1)).join(' ')} <br />
-            <span style={{ fontStyle: 'italic', fontWeight: '400', color: 'var(--accent-primary)' }}>{name.split(' ').slice(Math.max(1, Math.ceil(name.split(' ').length / 2) - 1), Math.ceil(name.split(' ').length / 2)).join(' ')}</span> {name.split(' ').slice(Math.ceil(name.split(' ').length / 2)).join(' ')}
+            {portfolioData.personalInfo.firstName || name.split(' ').slice(0, Math.max(1, Math.ceil(name.split(' ').length / 2) - 1)).join(' ')} <br />
+            <span style={{ fontStyle: 'italic', fontWeight: '400', color: 'var(--accent-primary)' }}>
+              {portfolioData.personalInfo.lastName || name.split(' ').slice(Math.max(1, Math.ceil(name.split(' ').length / 2) - 1)).join(' ')}
+            </span>
           </h1>
           
           {/* Mobile-only Image */}

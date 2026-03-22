@@ -40,17 +40,19 @@ const Navbar = () => {
   const menuVariants = {
     closed: {
       opacity: 0,
-      y: "-100%",
+      scale: 0.95,
+      y: -10,
       transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.3,
+        ease: "easeInOut"
       }
     },
     open: {
       opacity: 1,
+      scale: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.5,
         ease: [0.22, 1, 0.36, 1]
       }
     }
@@ -128,7 +130,7 @@ const Navbar = () => {
           className="mobile-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+          {isMobileMenuOpen ? <X size={28} style={{ color: 'var(--text-primary)' }} /> : <Menu size={28} style={{ color: 'var(--text-primary)' }} />}
         </div>
       </div>
 
@@ -142,17 +144,21 @@ const Navbar = () => {
             exit="closed"
             style={{
               position: 'fixed',
-              inset: 0,
-              background: 'var(--bg-primary)',
+              top: '4.5rem',
+              right: 'var(--container-padding)',
+              width: 'min(280px, calc(100vw - 3rem))',
+              background: 'rgba(255, 255, 255, 0.75)',
+              backdropFilter: 'blur(25px) saturate(180%)',
               zIndex: 1050,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
-              padding: '2rem'
+              padding: '1.5rem',
+              borderRadius: '24px',
+              border: '1px solid rgba(197, 160, 89, 0.1)',
+              boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)'
             }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '400px', margin: '0 auto', width: '100%' }}>
-              <span style={{ fontSize: '0.8rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '4px', color: 'var(--accent-primary)', marginBottom: '1rem' }}>Menu</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', width: '100%' }}>
               {navLinks.map((link, i) => (
                 <motion.a 
                   key={link.name} 
@@ -163,29 +169,21 @@ const Navbar = () => {
                   style={{
                     textDecoration: 'none',
                     color: 'var(--text-primary)',
-                    fontWeight: '700',
-                    fontSize: 'clamp(2rem, 8vw, 3rem)',
+                    fontWeight: '600',
+                    fontSize: '1.2rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    borderBottom: '1px solid rgba(166, 139, 113, 0.1)',
-                    paddingBottom: '0.5rem',
+                    borderBottom: '1px solid rgba(197, 160, 89, 0.05)',
+                    padding: '0.5rem 0',
                     transition: 'all 0.3s ease'
                   }}
                 >
-                  <span className="serif">{link.name}</span>
-                  <ArrowUpRight size={24} style={{ opacity: 0.3 }} />
+                  <span className="serif" style={{ fontSize: '1.3rem' }}>{link.name}</span>
+                  <ArrowUpRight size={18} style={{ opacity: 0.4, color: 'var(--accent-primary)' }} />
                 </motion.a>
               ))}
               
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-                style={{ marginTop: '2rem', textAlign: 'center' }}
-              >
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>© 2024 Duaa Abdel-Ati</p>
-              </motion.div>
             </div>
           </motion.div>
         )}

@@ -10,6 +10,8 @@
 export const portfolioData = {
   personalInfo: {
     name: "Duaa Abd-Elati Abd-Elazeem",
+    firstName: "Duaa Abd-Elati", // First line of Hero Name
+    lastName: "Abd-Elazeem",    // Second line of Hero Name (italicized)
     title: "Full-Stack Software Engineer | Backend Architect & Frontend Specialist",
     email: "duaa.ati.45@gmail.com",
     phone: "+201065728303",
@@ -21,7 +23,7 @@ export const portfolioData = {
     usp: "Software Engineer | Full-Stack Developer | UX Enthusiast.",
     cvUrl: "https://drive.google.com/file/d/1YVSWDaOXUcNubIkk25U5KPkZkzhLWD8g/view?usp=drive_link",
     heroImage: "/hero-image.jpg", // Local path in /public or generic URL
-    aboutImage: "/hero-image.jpg"  // Local path in /public or generic URL
+    aboutImage: "/hero2.png"  // Local path in /public or generic URL
   },
   sectionTitles: {
     about: "A Brief Introduction",
