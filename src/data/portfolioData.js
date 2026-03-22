@@ -23,7 +23,7 @@ export const portfolioData = {
     usp: "Software Engineer | Full-Stack Developer | UX Enthusiast.",
     cvUrl: "https://drive.google.com/file/d/1YVSWDaOXUcNubIkk25U5KPkZkzhLWD8g/view?usp=drive_link",
     heroImage: "/hero-image.jpg", // Local path in /public or generic URL
-    aboutImage: "/hero2.png"  // Local path in /public or generic URL
+    aboutImage: "/hero2.jpg"  // Local path in /public or generic URL
   },
   sectionTitles: {
     about: "A Brief Introduction",

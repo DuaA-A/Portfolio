@@ -57,7 +57,7 @@ const ProjectCard = ({ project, onClick }) => {
       </div>
  
       <div style={{ padding: '0.8rem 1.2rem', background: 'white', borderTop: '1px solid var(--border-color)' }}>
-         <h3 style={{ fontSize: '0.9rem', color: 'var(--text-primary)', fontWeight: '700', margin: 0 }}>{project.title}</h3>
+         <h3 style={{ fontSize: '0.8rem', color: 'var(--text-primary)', fontWeight: '700', margin: 0 }}>{project.title}</h3>
       </div>
     </motion.div>
   );

@@ -86,23 +86,23 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
             className="serif"
-            style={{ 
-              color: 'var(--accent-primary)', 
-              fontSize: 'clamp(0.75rem, 2vw, 0.9rem)', 
-              fontWeight: '600', 
-              letterSpacing: 'clamp(2px, 1vw, 4px)', 
-              display: 'block', 
-              marginBottom: '1rem', 
-              textTransform: 'uppercase' 
+            style={{
+              color: 'var(--accent-primary)',
+              fontSize: 'clamp(0.75rem, 2vw, 0.9rem)',
+              fontWeight: '600',
+              letterSpacing: 'clamp(2px, 1vw, 4px)',
+              display: 'block',
+              marginBottom: '1rem',
+              textTransform: 'uppercase'
             }}
           >
             {title}
           </motion.span>
 
-          <h1 style={{ 
-            fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', 
-            lineHeight: '1.1', 
-            marginBottom: '1.5rem', 
+          <h1 style={{
+            fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+            lineHeight: '1.1',
+            marginBottom: '1.5rem',
             letterSpacing: '-1.5px',
             fontWeight: '700'
           }}>
@@ -111,62 +111,62 @@ const Hero = () => {
               {portfolioData.personalInfo.lastName || name.split(' ').slice(Math.max(1, Math.ceil(name.split(' ').length / 2) - 1)).join(' ')}
             </span>
           </h1>
-          
+
           {/* Mobile-only Image */}
           <div className="mobile-only" style={{ marginBottom: '2.5rem', width: '100%', maxWidth: '340px', margin: '0 auto 2.5rem auto' }}>
-             <div className="arched-frame" style={{
+            <div className="arched-frame" style={{
+              width: '100%',
+              aspectRatio: '380 / 520',
+              borderRadius: 'clamp(100px, 30vw, 190px) clamp(100px, 30vw, 190px) 40px 40px',
+              border: '2px solid var(--accent-primary)',
+              padding: 'clamp(8px, 2vw, 16px)',
+              background: 'white',
+              boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <div style={{
                 width: '100%',
-                aspectRatio: '380 / 520',
-                borderRadius: 'clamp(100px, 30vw, 190px) clamp(100px, 30vw, 190px) 40px 40px',
-                border: '2px solid var(--accent-primary)',
-                padding: 'clamp(8px, 2vw, 16px)',
-                background: 'white',
-                boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)',
-                position: 'relative',
-                zIndex: 1
+                height: '100%',
+                overflow: 'hidden',
+                borderRadius: 'clamp(90px, 28vw, 176px) clamp(90px, 28vw, 176px) 26px 26px'
               }}>
-                <div style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  overflow: 'hidden', 
-                  borderRadius: 'clamp(90px, 28vw, 176px) clamp(90px, 28vw, 176px) 26px 26px' 
-                }}>
-                  <img
-                    src={portfolioData.personalInfo.heroImage || "https://placehold.co/600x800/white/C5A386?text=Hero+Image"}
-                    alt={name}
-                    className="hero-img"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                </div>
+                <img
+                  src={portfolioData.personalInfo.heroImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
+                  alt={name}
+                  className="hero-img"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
+            </div>
           </div>
 
-          <p style={{ 
-            fontSize: 'clamp(1rem, 3vw, 1.25rem)', 
-            color: 'var(--text-primary)', 
-            fontWeight: '600', 
-            marginBottom: '1.2rem', 
-            maxWidth: '600px', 
-            lineHeight: '1.4' 
+          <p style={{
+            fontSize: 'clamp(1rem, 3vw, 1.25rem)',
+            color: 'var(--text-primary)',
+            fontWeight: '600',
+            marginBottom: '1.2rem',
+            maxWidth: '600px',
+            lineHeight: '1.4'
           }}>
             {tagline}
           </p>
 
-          <p style={{ 
-            marginBottom: '2.5rem', 
-            color: 'var(--text-secondary)', 
-            lineHeight: '1.7', 
-            maxWidth: '480px', 
-            fontSize: 'clamp(0.9rem, 2vw, 1.05rem)' 
+          <p style={{
+            marginBottom: '2.5rem',
+            color: 'var(--text-secondary)',
+            lineHeight: '1.7',
+            maxWidth: '480px',
+            fontSize: 'clamp(0.9rem, 2vw, 1.05rem)'
           }}>
             {summary}
           </p>
 
-          <div 
-            style={{ 
-              display: 'flex', 
-              gap: '1.2rem', 
-              flexWrap: 'wrap', 
+          <div
+            style={{
+              display: 'flex',
+              gap: '1.2rem',
+              flexWrap: 'wrap',
               justifyContent: 'inherit',
               width: '100%',
               alignItems: 'center'
@@ -214,14 +214,14 @@ const Hero = () => {
             position: 'relative',
             zIndex: 1
           }}>
-            <div style={{ 
-              width: '100%', 
-              height: '100%', 
-              overflow: 'hidden', 
-              borderRadius: 'clamp(90px, 28vw, 176px) clamp(90px, 28vw, 176px) 26px 26px' 
+            <div style={{
+              width: '100%',
+              height: '100%',
+              overflow: 'hidden',
+              borderRadius: 'clamp(90px, 28vw, 176px) clamp(90px, 28vw, 176px) 26px 26px'
             }}>
               <img
-                src={portfolioData.personalInfo.heroImage || "https://placehold.co/600x800/white/C5A386?text=Hero+Image"}
+                src={portfolioData.personalInfo.heroImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
                 alt={name}
                 className="hero-img"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(3%) contrast(105%)' }}

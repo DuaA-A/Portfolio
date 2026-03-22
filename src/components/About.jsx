@@ -5,15 +5,14 @@ import { portfolioData } from '../data/portfolioData';
 const About = () => {
   if (!portfolioData?.personalInfo) return null;
   const { aboutImage } = portfolioData.personalInfo;
-  const genericPlaceholder = "https://placehold.co/600x800/white/C5A386?text=Profile+Image";
 
   return (
     <section id="about" className="section-padding container">
-      <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', 
-        gap: 'clamp(2rem, 8vw, 6rem)', 
-        alignItems: 'center' 
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+        gap: 'clamp(2rem, 8vw, 6rem)',
+        alignItems: 'center'
       }} className="about-grid">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -23,18 +22,18 @@ const About = () => {
           className="about-image-wrapper desktop-only"
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <div className="arched-frame" style={{ 
-            width: '100%', 
+          <div className="arched-frame" style={{
+            width: '100%',
             maxWidth: '380px',
             aspectRatio: '1 / 1.2',
-            borderRadius: 'clamp(100px, 40vw, 250px) clamp(100px, 40vw, 250px) 40px 40px', 
-            border: '1px solid var(--border-color)', 
-            padding: 'clamp(8px, 2vw, 12px)', 
-            background: 'white' 
+            borderRadius: 'clamp(100px, 40vw, 250px) clamp(100px, 40vw, 250px) 40px 40px',
+            border: '1px solid var(--border-color)',
+            padding: 'clamp(8px, 2vw, 12px)',
+            background: 'white'
           }}>
             <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: 'clamp(90px, 38vw, 240px) clamp(90px, 38vw, 240px) 30px 30px' }}>
               <img
-                src={aboutImage || genericPlaceholder}
+                src={aboutImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
                 alt="About"
                 style={{ filter: 'sepia(30%) contrast(105%) brightness(95%)', width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -50,7 +49,7 @@ const About = () => {
           style={{ width: '100%' }}
           className="about-content"
         >
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -61,23 +60,23 @@ const About = () => {
 
           {/* Mobile-only Image */}
           <div className="mobile-only" style={{ marginBottom: '2.5rem', width: '100%', maxWidth: '340px', margin: '0 auto 2.5rem auto' }}>
-             <div className="arched-frame" style={{ 
-                width: '100%', 
-                aspectRatio: '1 / 1.2',
-                borderRadius: 'clamp(100px, 40vw, 250px) clamp(100px, 40vw, 250px) 40px 40px', 
-                border: '1px solid var(--border-color)', 
-                padding: 'clamp(8px, 2vw, 12px)', 
-                background: 'white',
-                boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)'
-              }}>
-                <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: 'clamp(90px, 38vw, 240px) clamp(90px, 38vw, 240px) 30px 30px' }}>
-                  <img
-                    src={aboutImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
-                    alt="About"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                </div>
+            <div className="arched-frame" style={{
+              width: '100%',
+              aspectRatio: '1 / 1.2',
+              borderRadius: 'clamp(100px, 40vw, 250px) clamp(100px, 40vw, 250px) 40px 40px',
+              border: '1px solid var(--border-color)',
+              padding: 'clamp(8px, 2vw, 12px)',
+              background: 'white',
+              boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)'
+            }}>
+              <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: 'clamp(90px, 38vw, 240px) clamp(90px, 38vw, 240px) 30px 30px' }}>
+                <img
+                  src={aboutImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
+                  alt="About"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
+            </div>
           </div>
 
           <p style={{ fontSize: 'clamp(1.1rem, 3vw, 1.2rem)', color: 'var(--text-primary)', lineHeight: '1.8', marginBottom: '1.5rem', fontWeight: '500' }}>
@@ -91,10 +90,10 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', 
-              gap: 'clamp(1rem, 3vw, 2rem)' 
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
+              gap: 'clamp(1rem, 3vw, 2rem)'
             }}
           >
             <div style={{ padding: 'clamp(1rem, 5vw, 1.5rem)', borderLeft: '3px solid var(--accent-primary)', background: 'rgba(197, 163, 134, 0.05)', borderRadius: '0 12px 12px 0' }}>
