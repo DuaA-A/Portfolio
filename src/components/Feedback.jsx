@@ -4,15 +4,16 @@ import { Quote, Star } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const Feedback = () => {
+  if (!portfolioData.testimonials || portfolioData.testimonials.length === 0) return null;
   return (
     <section id="testimonials" className="section-padding container">
       <div style={{ textAlign: 'center', marginBottom: 'clamp(2.5rem, 8vw, 4rem)' }}>
         <motion.h2 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Customer <span style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Feedback</span>
+          {portfolioData.sectionTitles?.testimonials || "Client Feedback"}
         </motion.h2>
       </div>
 
@@ -95,8 +96,25 @@ const TestimonialCard = ({ testimonial, index }) => {
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: 'auto' }}>
-        <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--bg-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', color: 'var(--accent-primary)', border: '1px solid var(--border-color)', fontSize: '0.9rem' }}>
-          {testimonial.name[0]}
+        <div style={{ 
+          width: 'clamp(56px, 12vw, 64px)', 
+          height: 'clamp(56px, 12vw, 64px)', 
+          borderRadius: '50%', 
+          background: 'var(--bg-primary)', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          fontWeight: '700', 
+          color: 'var(--accent-primary)', 
+          border: '1px solid var(--border-color)', 
+          fontSize: '1rem',
+          overflow: 'hidden'
+        }}>
+          {testimonial.avatar ? (
+            <img src={testimonial.avatar} alt={testimonial.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          ) : (
+            testimonial.name[0]
+          )}
         </div>
         <div>
           <h4 style={{ fontSize: '0.95rem', fontWeight: '700', color: 'var(--text-primary)' }}>{testimonial.name}</h4>

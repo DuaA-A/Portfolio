@@ -10,7 +10,7 @@ const Footer = () => {
   const { name, email, github, linkedin } = portfolioData.personalInfo;
 
   return (
-    <footer style={{ background: 'white', borderTop: '1px solid var(--border-color)', padding: 'clamp(3.5rem, 8vw, 5rem) 0 3rem 0' }}>
+    <footer style={{ background: '#111', borderTop: '1px solid rgba(255,255,255,0.05)', padding: 'clamp(4rem, 10vw, 6rem) 0 3rem 0', color: 'white' }}>
       <div className="container">
         <div style={{ 
           display: 'flex', 
@@ -21,34 +21,34 @@ const Footer = () => {
           marginBottom: 'clamp(2.5rem, 6vw, 4rem)'
         }} className="footer-top">
           <div style={{ flex: '1 1 300px' }}>
-             <h3 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', marginBottom: '0.8rem' }}>{name.split(' ')[0]} <span style={{ fontStyle: 'italic', fontWeight: '400', color: 'var(--accent-primary)' }}>{name.split(' ')[1]}</span></h3>
-             <p style={{ color: 'var(--text-secondary)', maxWidth: '400px', lineHeight: '1.6', fontSize: '0.95rem' }}>
+             <h3 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', marginBottom: '0.8rem', color: 'white' }}>{name.split(' ')[0]} <span style={{ fontStyle: 'italic', fontWeight: '400', color: 'var(--accent-primary)' }}>{name.split(' ')[1]}</span></h3>
+             <p style={{ color: 'rgba(255,255,255,0.6)', maxWidth: '400px', lineHeight: '1.6', fontSize: '0.95rem' }}>
                Building digital experiences with precision, passion, and a focus on impact.
              </p>
           </div>
           
           <div style={{ display: 'flex', gap: 'clamp(1.2rem, 3vw, 2rem)' }}>
-            <a href={`https://${github}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', transition: 'color 0.3s' }}>
+            <a href={`https://${github}`} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.8)', transition: 'color 0.3s' }}>
               <Github size={20} />
             </a>
-            <a href={`https://${linkedin}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', transition: 'color 0.3s' }}>
+            <a href={`https://${linkedin}`} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.8)', transition: 'color 0.3s' }}>
               <Linkedin size={20} />
             </a>
-            <a href={`mailto:${email}`} style={{ color: 'var(--text-primary)', transition: 'color 0.3s' }}>
+            <a href={`mailto:${email}`} style={{ color: 'rgba(255,255,255,0.8)', transition: 'color 0.3s' }}>
               <Mail size={20} />
             </a>
           </div>
         </div>
-
-        <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '2.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: '500' }}>
+ 
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
+          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', fontWeight: '500' }}>
             © {new Date().getFullYear()} {name}. All rights reserved.
           </p>
           <button 
             onClick={scrollToTop}
             style={{ 
-              background: 'var(--bg-primary)', 
-              border: '1px solid var(--border-color)', 
+              background: 'rgba(255,255,255,0.05)', 
+              border: '1px solid rgba(255,255,255,0.1)', 
               padding: '0.8rem 1.5rem', 
               borderRadius: '12px', 
               fontSize: '0.8rem', 
@@ -57,7 +57,7 @@ const Footer = () => {
               display: 'flex',
               alignItems: 'center',
               gap: '0.6rem',
-              color: 'var(--text-primary)'
+              color: 'white'
             }}
           >
             Back to Top <ArrowUp size={14} />

@@ -1,3 +1,12 @@
+/**
+ * PORTFOLIO DATA TEMPLATE
+ * -----------------------
+ * This file contains all the content for your portfolio.
+ * 
+ * - Personal Info: Your core branding and contact details.
+ * - Education/Skills/Projects/Testimonials: Arrays of objects.
+ * - Hiding Sections: To hide a section (e.g., Testimonials), simply leave the array empty: [].
+ */
 export const portfolioData = {
   personalInfo: {
     name: "Duaa Abd-Elati Abd-Elazeem",
@@ -11,7 +20,16 @@ export const portfolioData = {
     tagline: "Software Engineer merging robust backend systems with premium frontend aesthetics.",
     usp: "Software Engineer | Full-Stack Developer | UX Enthusiast.",
     cvUrl: "https://drive.google.com/file/d/1YVSWDaOXUcNubIkk25U5KPkZkzhLWD8g/view?usp=drive_link",
-    heroImage: "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view?usp=drive_link"
+    heroImage: "/hero-image.jpg", // Local path in /public or generic URL
+    aboutImage: "/hero-image.jpg"  // Local path in /public or generic URL
+  },
+  sectionTitles: {
+    about: "A Brief Introduction",
+    education: "Academic Journey",
+    skills: "Professional Skillset",
+    projects: "Featured Projects",
+    testimonials: "Client Feedback",
+    contact: "Get In Touch"
   },
   education: [
     {
@@ -48,7 +66,7 @@ export const portfolioData = {
       github: "https://github.com/DuaA-A/RO-GlowGuide",
       imageType: "website",
       images: [
-        "https://drive.google.com/file/d/1XNvS_l9lwyPyc41kJsMV8h7XesYQEijw/view?usp=drive_link",
+        "/RO/{8E59A760-F87A-421E-B1B3-580F20677B15}.png",
       ]
     },
     {
@@ -101,6 +119,7 @@ export const portfolioData = {
       github: "https://github.com/Duaa-A",
       imageType: "backend",
       images: [
+        "/smart-Enroll/Screenshot 2025-05-16 010813.png"
       ]
     },
     {
@@ -121,12 +140,14 @@ export const portfolioData = {
     {
       name: "Omima Saeid",
       text: "Honestly, you’re incredibly talented, mashallah. Your work, your attitude everything is amazing. And the most important thing (and I truly mean this, not just a compliment) is that you treat everything like it’s your own project. You put in real effort, always trying to make it the best and more creative than anything else. And of course, mashallah, you always finish your work so quickly, seriously, you’re amazing. Keep going! As for the website, I was personally so impressed. it was honestly super wow 💕",
-      role: "Team Leader, RO-GlowGuide"
+      role: "Team Leader, RO-GlowGuide",
+      avatar: "/omima_saeid.png"
     },
     {
       name: "Youssif Ali Okasha",
       text: "Amazing work! Professional, creative, and very easy to deal with. Highly recommended.",
-      role: "Team Member, RO-GlowGuide"
+      role: "Team Member, RO-GlowGuide",
+      avatar: "/yousef_Ali.png"
     },
   ],
   achievements: [

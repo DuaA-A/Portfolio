@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 
 const Skills = () => {
-  const categories = ["Frontend", "Backend", "Engineering", "Tools"];
+  if (!portfolioData.skills || portfolioData.skills.length === 0) return null;
+  const categories = [...new Set(portfolioData.skills.map(s => s.category))];
 
   return (
     <section id="skills" className="section-padding container">
@@ -14,7 +15,7 @@ const Skills = () => {
           viewport={{ once: true }}
           style={{ textAlign: 'center' }}
         >
-          Specialized <span style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Skillset</span>
+          {portfolioData.sectionTitles?.skills || "Specialized Skillset"}
         </motion.h2>
       </div>
 

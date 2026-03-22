@@ -38,6 +38,23 @@ body {
   padding-top: 0;
 }
 
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+}
+
 h1, h2, h3, h4, .serif {
   font-family: var(--font-serif);
 }
@@ -161,15 +178,10 @@ h3 {
   .hero-grid, .about-grid, .contact-grid {
     grid-template-columns: 1fr !important;
     text-align: center;
-    gap: 4rem !important;
-  }
-  
-  .hero-content {
-    order: 1;
+    gap: 3rem !important;
   }
   
   .hero-image-wrapper {
-    order: 2;
     margin-top: 2rem;
   }
 

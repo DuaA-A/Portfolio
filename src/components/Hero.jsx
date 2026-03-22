@@ -106,8 +106,38 @@ const Hero = () => {
             letterSpacing: '-1.5px',
             fontWeight: '700'
           }}>
-            {name.split(' ')[0]} <span style={{ fontStyle: 'italic', fontWeight: '400', color: 'var(--accent-primary)' }}>{name.split(' ').slice(1, 2)}</span> {name.split(' ').slice(2).join(' ')}
+            {name.split(' ').slice(0, Math.max(1, Math.ceil(name.split(' ').length / 2) - 1)).join(' ')} <br />
+            <span style={{ fontStyle: 'italic', fontWeight: '400', color: 'var(--accent-primary)' }}>{name.split(' ').slice(Math.max(1, Math.ceil(name.split(' ').length / 2) - 1), Math.ceil(name.split(' ').length / 2)).join(' ')}</span> {name.split(' ').slice(Math.ceil(name.split(' ').length / 2)).join(' ')}
           </h1>
+          
+          {/* Mobile-only Image */}
+          <div className="mobile-only" style={{ marginBottom: '2.5rem', width: '100%', maxWidth: '340px', margin: '0 auto 2.5rem auto' }}>
+             <div className="arched-frame" style={{
+                width: '100%',
+                aspectRatio: '380 / 520',
+                borderRadius: 'clamp(100px, 30vw, 190px) clamp(100px, 30vw, 190px) 40px 40px',
+                border: '2px solid var(--accent-primary)',
+                padding: 'clamp(8px, 2vw, 16px)',
+                background: 'white',
+                boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)',
+                position: 'relative',
+                zIndex: 1
+              }}>
+                <div style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  overflow: 'hidden', 
+                  borderRadius: 'clamp(90px, 28vw, 176px) clamp(90px, 28vw, 176px) 26px 26px' 
+                }}>
+                  <img
+                    src={portfolioData.personalInfo.heroImage || "https://placehold.co/600x800/white/C5A386?text=Hero+Image"}
+                    alt={name}
+                    className="hero-img"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+              </div>
+          </div>
 
           <p style={{ 
             fontSize: 'clamp(1rem, 3vw, 1.25rem)', 
@@ -168,7 +198,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9, x: 50 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 1.2, delay: 0.2 }}
-          className="hero-image-wrapper"
+          className="hero-image-wrapper desktop-only"
           style={{ position: 'relative', justifySelf: 'center', width: '100%', maxWidth: '400px' }}
         >
           <div className="arched-frame" style={{
@@ -189,7 +219,7 @@ const Hero = () => {
               borderRadius: 'clamp(90px, 28vw, 176px) clamp(90px, 28vw, 176px) 26px 26px' 
             }}>
               <img
-                src={portfolioData.personalInfo.heroImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
+                src={portfolioData.personalInfo.heroImage || "https://placehold.co/600x800/white/C5A386?text=Hero+Image"}
                 alt={name}
                 className="hero-img"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(3%) contrast(105%)' }}

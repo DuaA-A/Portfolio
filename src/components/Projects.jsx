@@ -38,7 +38,7 @@ const ProjectCard = ({ project, onClick }) => {
       }}
     >
       <div style={{ 
-        height: 'clamp(180px, 25vw, 240px)', 
+        height: 'clamp(220px, 35vw, 320px)', 
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -51,36 +51,13 @@ const ProjectCard = ({ project, onClick }) => {
         <div style={{ 
           position: 'absolute', 
           inset: 0, 
-          background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6))',
+          background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4))',
           opacity: 1
         }}></div>
-        <div style={{ 
-          position: 'absolute', 
-          top: '1rem', 
-          right: '1rem', 
-          background: 'rgba(255, 255, 255, 0.9)', 
-          backdropFilter: 'blur(4px)',
-          padding: '0.5rem', 
-          borderRadius: '12px',
-          boxShadow: 'var(--shadow-sm)',
-          color: 'var(--accent-primary)'
-        }}>
-          {getIcon(project.type)}
-        </div>
       </div>
-
-      <div style={{ padding: '1.2rem', flexGrow: 1, display: 'flex', flexDirection: 'column', background: 'white' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
-          <div>
-            <span style={{ fontSize: '0.65rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--accent-primary)', display: 'block', marginBottom: '0.3rem' }}>
-              {project.type}
-            </span>
-            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--text-primary)', fontWeight: '700', lineHeight: '1.3' }}>{project.title}</h3>
-          </div>
-          <div style={{ color: 'var(--accent-primary)', transform: 'rotate(-45deg)', flexShrink: 0 }}>
-            <ArrowRight size={20} />
-          </div>
-        </div>
+ 
+      <div style={{ padding: '0.8rem 1.2rem', background: 'white', borderTop: '1px solid var(--border-color)' }}>
+         <h3 style={{ fontSize: '0.9rem', color: 'var(--text-primary)', fontWeight: '700', margin: 0 }}>{project.title}</h3>
       </div>
     </motion.div>
   );
@@ -238,6 +215,7 @@ const Modal = ({ project, onClose }) => {
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  if (!portfolioData.projects || portfolioData.projects.length === 0) return null;
 
   return (
     <section id="projects" style={{ padding: 'var(--section-padding) 0', position: 'relative', overflow: 'hidden' }}>
@@ -273,7 +251,7 @@ const Projects = () => {
               viewport={{ once: true }}
               style={{ textAlign: 'center' }}
             >
-              Featured <span style={{ fontStyle: 'italic', color: 'var(--accent-primary)', fontWeight: '400' }}>Projects</span>
+              {portfolioData.sectionTitles?.projects || "Featured Projects"}
             </motion.h2>
           </div>
 

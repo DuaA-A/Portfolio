@@ -4,14 +4,24 @@ import { Mail, MapPin, Github, Linkedin, ExternalLink } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const Contact = () => {
-  const { email, location, github, linkedin } = portfolioData.personalInfo;
+  if (!portfolioData.personalInfo) return null;
+  const { email, phone, github, linkedin, location } = portfolioData.personalInfo;
 
   return (
     <section id="contact" className="section-padding container">
-      <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.2fr)', 
-        gap: 'clamp(3rem, 8vw, 6rem)', 
+      <div style={{ textAlign: 'center', marginBottom: 'clamp(3rem, 8vw, 5rem)' }}>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          {portfolioData.sectionTitles?.contact || "Get In Touch"}
+        </motion.h2>
+      </div>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.2fr)',
+        gap: 'clamp(3rem, 8vw, 6rem)',
         alignItems: 'start',
         background: 'white',
         padding: 'clamp(2rem, 5vw, 5rem)',

@@ -4,6 +4,7 @@ import { GraduationCap, Calendar, BookOpen } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const Education = () => {
+  if (!portfolioData.education || portfolioData.education.length === 0) return null;
   return (
     <section id="education" className="section-padding container">
       <div style={{ textAlign: 'center', marginBottom: 'clamp(3rem, 8vw, 4rem)' }}>
@@ -18,7 +19,7 @@ const Education = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Academic <span style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Journey</span>
+            {portfolioData.sectionTitles?.education || "Academic Journey"}
           </motion.h2>
         </motion.div>
       </div>

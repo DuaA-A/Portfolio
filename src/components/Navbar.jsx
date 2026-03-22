@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
+import { portfolioData } from '../data/portfolioData';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { name } = portfolioData.personalInfo;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,14 +26,16 @@ const Navbar = () => {
     }
   }, [isMobileMenuOpen]);
 
+  const hasData = (key) => portfolioData[key] && portfolioData[key].length > 0;
+
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Education', href: '#education' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-  ];
+    { name: 'Home', href: '#', show: true },
+    { name: 'About', href: '#about', show: !!portfolioData.personalInfo },
+    { name: 'Education', href: '#education', show: hasData('education') },
+    { name: 'Skills', href: '#skills', show: hasData('skills') },
+    { name: 'Projects', href: '#projects', show: hasData('projects') },
+    { name: 'Contact', href: '#contact', show: true },
+  ].filter(link => link.show);
 
   const menuVariants = {
     closed: {
@@ -87,7 +92,7 @@ const Navbar = () => {
           className="serif" 
           style={{ fontSize: 'clamp(1.4rem, 4vw, 1.8rem)', fontWeight: '700', textDecoration: 'none', color: 'var(--text-primary)', letterSpacing: '-0.5px', zIndex: 1100 }}
         >
-          Duaa<span style={{ color: 'var(--accent-primary)' }}>.</span>A
+          {name.split(' ')[0]}<span style={{ color: 'var(--accent-primary)' }}>.</span>{name.split(' ')[1] ? name.split(' ')[1][0] : ''}
         </motion.a>
 
         {/* Desktop Links */}

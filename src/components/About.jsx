@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { portfolioData } from '../data/portfolioData';
 
 const About = () => {
+  if (!portfolioData?.personalInfo) return null;
+  const { aboutImage } = portfolioData.personalInfo;
+  const genericPlaceholder = "https://placehold.co/600x800/white/C5A386?text=Profile+Image";
+
   return (
     <section id="about" className="section-padding container">
       <div style={{ 
@@ -15,7 +20,7 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="about-image-wrapper"
+          className="about-image-wrapper desktop-only"
           style={{ display: 'flex', justifyContent: 'center' }}
         >
           <div className="arched-frame" style={{ 
@@ -29,7 +34,7 @@ const About = () => {
           }}>
             <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: 'clamp(90px, 38vw, 240px) clamp(90px, 38vw, 240px) 30px 30px' }}>
               <img
-                src="https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"
+                src={aboutImage || genericPlaceholder}
                 alt="About"
                 style={{ filter: 'sepia(30%) contrast(105%) brightness(95%)', width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -45,13 +50,36 @@ const About = () => {
           style={{ width: '100%' }}
           className="about-content"
         >
-          <motion.h2
+          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            style={{ marginBottom: '1.5rem' }}
           >
-            A Brief <span style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Introduction</span>
+            {portfolioData.sectionTitles?.about || "A Brief Introduction"}
           </motion.h2>
+
+          {/* Mobile-only Image */}
+          <div className="mobile-only" style={{ marginBottom: '2.5rem', width: '100%', maxWidth: '340px', margin: '0 auto 2.5rem auto' }}>
+             <div className="arched-frame" style={{ 
+                width: '100%', 
+                aspectRatio: '1 / 1.2',
+                borderRadius: 'clamp(100px, 40vw, 250px) clamp(100px, 40vw, 250px) 40px 40px', 
+                border: '1px solid var(--border-color)', 
+                padding: 'clamp(8px, 2vw, 12px)', 
+                background: 'white',
+                boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)'
+              }}>
+                <div style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: 'clamp(90px, 38vw, 240px) clamp(90px, 38vw, 240px) 30px 30px' }}>
+                  <img
+                    src={aboutImage || "https://drive.google.com/file/d/1Wgj1RrNqaHp6bz9jL2COxr8T1WrojHbR/view"}
+                    alt="About"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+              </div>
+          </div>
+
           <p style={{ fontSize: 'clamp(1.1rem, 3vw, 1.2rem)', color: 'var(--text-primary)', lineHeight: '1.8', marginBottom: '1.5rem', fontWeight: '500' }}>
             I am a Software Engineer based in Giza, Egypt, with a passion for building systems that are as technically robust as they are visually stunning.
           </p>
